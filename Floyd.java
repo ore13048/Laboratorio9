@@ -5,34 +5,34 @@
 * Henry Orellana, Carnet: 13048
 ***********************************************/
 
-importación  java.util.ArrayList ;
-importación  java.util.HashMap ;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-público  de clase  Floyd <T extiende  Comparable > {
-    pública  Floyd () {
+public class Floyd<T extends Comparable> {
+    public Floyd(){
     }
     
-    público  ArrayList  algoritmoFloyd ( Grafo  dígrafo ) {
-        construirAdyacencia (dígrafo);
-        volver  nuevo  ArrayList ();
+    public ArrayList algoritmoFloyd(Grafo digrafo){
+        construirAdyacencia(digrafo);
+        return new ArrayList();
     }
     
-    privada  vacío  construirAdyacencia ( Grafo  dígrafo ) {
-        // Etiquetas de Destinos
-        ArrayList < Nodo >  Nodos  = dígrafo . getNodos ();
-        Cadena [] [] adyacencia =  nuevos  Cuerda [ Nodos . size ()] [ Nodos . size ()];
-        T [] nombres de nodo =  nulo ;
-        para ( int i =  0 ; i <  Nodos . size (); i ++ ) {
-            nombres de los nodos [i] = ( T ) Nodos . get (i) . getOrigen ();
+    private void construirAdyacencia(Grafo digrafo){
+        //Etiquetas de destinos
+        ArrayList<Nodo> Nodes = digrafo.getNodos();
+        String[][] adyacencia = new String[Nodes.size()][Nodes.size()];
+        T[] nodeNames = null;
+        for(int i = 0; i < Nodes.size(); i++){
+            nodeNames[i] = (T)Nodes.get(i).getOrigen();
         }
         
-        para ( int i =  0 ; i <  Nodos . size (); i ++ ) {
-            HashMap < Entero , Conexion < T > > Destinos =  Nodos . get (i) . getDestinos ();
-            adyacencia [i] [i] =  "0" ;
-            para ( int j =  0 ; j < Destinos . size (); j ++ ) {
-                para ( int k =  0 ; k <  Nodos . size (); k ++ ) {
-                    si (Destinos . get (j) . getDestino () . equals (nombres de los nodos [k])) {
-                        adyacencia [i] [k] = Destinos . get (j) . getValor () + "" ;
+        for(int i = 0; i < Nodes.size(); i++){
+            HashMap<Integer, Conexion<T>> destinos = Nodes.get(i).getDestinos();
+            adyacencia[i][i] = "0";
+            for(int j = 0; j < destinos.size(); j++){
+                for(int k = 0; k < Nodes.size(); k++){
+                    if(destinos.get(j).getDestino().equals(nodeNames[k])){
+                        adyacencia[i][k] = destinos.get(j).getValor()+"";
                     }
                 }
             }

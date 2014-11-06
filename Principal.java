@@ -1,3 +1,10 @@
+/***********************************************
+* Universidad del Valle de Guatemala
+* Algoritmos y Estructura de Datos
+* Samuel Maldonado, carnet: 
+* Henry Orellana, Carnet: 13048
+***********************************************/
+
 import java.util.ArrayList;
 
 public class Principal {
@@ -5,16 +12,16 @@ public class Principal {
         //Nombres de las ciudades y cantidad de nodos
         int nodos = 10;
         ArrayList<String> ciudades = new ArrayList();
-        String ciudad1 = "Mazatenango";
-        String ciudad2 = "Escuintla";
-        String ciudad3 = "Rethaluleu";
+        String ciudad1 = "El Progreso";
+        String ciudad2 = "Puerto Barrios";
+        String ciudad3 = "Petén";
         String ciudad4 = "Quetzaltenango";
         String ciudad5 = "Guatemala";
         String ciudad6 = "Chiquimula";
-        String ciudad7 = "Antigua";
-        String ciudad8 = "Flores";
+        String ciudad7 = "Huehuetenango";
+        String ciudad8 = "Zacapa";
         String ciudad9 = "Cobán";
-        String ciudad10 = "Cuyotenango";
+        String ciudad10 = "Escuintla";
         
         //Añadiendo a la lista
         ciudades.add(ciudad1);
